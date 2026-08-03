@@ -1,0 +1,68 @@
+[project]
+name = "citrix-launcher"
+version = "0.1.0"
+description = "Launch a Citrix desktop through a Playwright-controlled browser on macOS"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.14"
+dependencies = [
+    "playwright>=1.54.0",
+    "python-dotenv>=1.1.1",
+    "typer>=0.16.0",
+]
+
+[project.scripts]
+citrix = "citrix_launcher.cli:app"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pyright>=1.1.403",
+    "pytest>=8.4.0",
+    "ruff>=0.12.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.8.0,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = [
+    "ARG",
+    "B",
+    "C4",
+    "DTZ",
+    "E",
+    "F",
+    "I",
+    "LOG",
+    "N",
+    "PERF",
+    "PIE",
+    "PTH",
+    "PT",
+    "RET",
+    "RUF",
+    "S",
+    "SIM",
+    "UP",
+    "W",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.pyright]
+include = ["src", "tests"]
+pythonVersion = "3.14"
+typeCheckingMode = "strict"
+venvPath = "."
+venv = ".venv"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

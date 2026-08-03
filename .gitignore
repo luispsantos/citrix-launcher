@@ -1,0 +1,14 @@
+.venv/
+build/
+dist/
+*.egg-info/
+.envrc
+.env
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+*.pyc
+.DS_Store
+playwright-report/
+test-results/
