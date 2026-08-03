@@ -46,7 +46,7 @@ def check_configuration() -> DoctorCheck:
 def check_playwright_chromium() -> DoctorCheck:
     """Verify that Playwright's managed Chromium executable is installed."""
     try:
-        result = subprocess.run(  # noqa: S603
+        result = subprocess.run(
             [sys.executable, "-m", "playwright", "install", "--dry-run", "chromium"],
             check=False,
             capture_output=True,
