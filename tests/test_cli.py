@@ -34,7 +34,7 @@ def test_dry_run_does_not_open_browser_or_launch_citrix(tmp_path: Path) -> None:
 
     assert result.exit_code == 0
     assert "Dry run: configuration is valid" in result.stdout
-    assert "https://citrix.example.com" in result.stdout
+    assert "URL: https://citrix.example.com" in result.stdout.splitlines()
     assert "person@example.com" in result.stdout
     assert "Test Desktop" in result.stdout
     browser.assert_not_called()
