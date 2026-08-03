@@ -40,7 +40,7 @@ jobs:
           enable-cache: true
 
       - name: Cache virtual environment
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: .venv
           key: venv-${{ runner.os }}-py3.14-${{ hashFiles('uv.lock') }}
@@ -50,7 +50,7 @@ jobs:
         run: uv sync --frozen --group dev
 
       - name: Cache pre-commit environment
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.cache/pre-commit
           key: pre-commit-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
@@ -71,7 +71,7 @@ jobs:
           save-cache: false
 
       - name: Cache virtual environment
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: .venv
           key: venv-${{ runner.os }}-py3.14-${{ hashFiles('uv.lock') }}
