@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Launch a Citrix desktop through a Playwright-controlled browser on macOS"
 readme = "README.md"
 license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.14"
 dependencies = [
     "playwright>=1.54.0",
